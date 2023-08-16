@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "微軟正黑體";
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+           
+        }
+
+        .header {
+            max-width: 1200px;
+            border-bottom: 2px solid black;
+            margin: 48px 0 17px 0;
+            padding-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 80px;
+            line-height: 90px;
+        }
+
+
+
+        .content img {
+            width: 324px;
+            height: 324px;
+            margin: 48px 0;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            border-bottom: 1px black solid;
+            padding-bottom: 10px;
+        }
+
+        .content h1 span {
+            font-size: 24px;
+            color: #A00404;
+        }
+
+        .content ul {
+            border:2px solid red;
+            padding-left: 20px;
+            line-height: 32px;
+            margin: 10px 0 40px 0;
+        }
+
+        .content ul li {
+            margin: 24px ;
+            border:2px solid blue;
+        }
+
+        .content ul>li:first-child::before {
+            content: '   ';
+            width: 16px;
+            height: 16px;
+            background-color: #96A9C4;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .timeline {
+            position: relative;
+
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* 設定前面的那條線 */
+        .timeline::before {
+
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #96A9C4;
+            top: 18px;
+            bottom: 22px;
+            left: 29.5px;
+            z-index: 2;
+        }
+
+        /* Container around content */
+        .container {
+            position: relative;
+            left: 30px;
+            /* border: black solid 2px; */
+
+        }
+
+        /* 設定前面的圓點 */
+        .container::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: -8px;
+            background-color: #96A9C4;
+            top: 14px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 10px 20px;
+            font-size: 24px;
+        }
+
+        /* 設定深藍區塊 */
+        .skill {
+            position: relative;
+            width: 1200px;
+            height: 504px;
+            background-color: #415165;
+            margin: 20px auto;
+            padding: 24px 0 0 0;
+            color: white;
+        }
+
+        /* 設定淺藍區塊 */
+        .skill::after {
+            content: "";
+            position: absolute;
+            background-color: #96A9C4;
+            z-index: -1;
+            height: 360px;
+            width: 1920px;
+            left: -360px;
+            top: 69px;
+        }
+
+        .skill h2 {
+            width: 996px;
+            font-size: 32px;
+            border-bottom: 1px solid white;
+            text-align: center;
+            line-height: 25px;
+            padding-bottom: 8px;
+            margin: 0 auto 40px auto;
+        }
+
+        .skill span {
+            font-size: 24px;
+            margin-left: 16px;
+        }
+
+        /* ul */
+        .skillList {
+            width: 216px;
+            padding-left: 23px;
+            border-left: 1px solid #96A9C4;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+        }
+
+        /* li */
+        .skillListItem {
+            font-size: 24px;
+            font-weight: lighter;
+            line-height: 36px;
+            margin-bottom: 16px;
+        }
+
+        .work h1 {
+            font-size: 32px;
+            border-bottom: 2px black solid;
+            padding: 20px 0;
+
+        }
+
+        .work h1 span {
+            font-size: 24px;
+            color: #A00404;
+        }
+
+        .work ul {
+            width: 700px;
+            height: 647px;
+
+            padding: 20px;
+        }
+
+        .work li {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 24px;
+            margin: 20px 0;
+        }
+
+        .work img {
+            width: 90px;
+            height: 67px;
+            margin: 0 20px 0 0;
+
+        }
+
+        .work p {
+            width: 642px;
+            height: 154px;
+            line-height: 30px;
+
+        }
+
+        .work .tree {
+            width: 72px;
+            height: 73px;
+        }
+
+        .footer {
+            width: 1200px;
+            height: 401px;
+            background-color: #415165;
+
+        }
+
+        .footer h2 {
+            
+            width: 1200px;
+            color: white;
+            font-size: 32px;
+            text-align: center;
+            border-bottom: 1px white solid;
+            padding: 20px;
+        }
+
+        .footer span {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        .footer li {
+            font-size: 24px;
+            line-height: 36px;
+            color: white;
+            text-align: center;
+            padding: 12.5px;
+        }
+
+        .footer .icon {
+            margin: 0 auto;
+            width: 192px;
+        }
+
+        .footer img {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <p>Joanne <br>
+                Chen</p>
+        </div>
+
+
+        <div class="content">
+            <img src="imgs/component.png" alt="大頭照">
+            <h1> 個人資料 <span>PROFILE</span></h1>
+
+            <ul>
+                <li>陳久安 Joanne Chen <br> 
+                 1997- <br> 
+                應屆畢業生／接案設計師／UI 設計實習生<br> 
+                </li>
+              
+                <li>UI 設計修行中／立志當斜槓青年 <br>
+                獨立接案，內容涵蓋： <br> 
+                品牌規劃、視覺設計、編輯設計、標準字、物件及印刷品設計等</li>
+
+            </ul>
+
+
+            <h1> 學歷 <span>EDUCATION</span></h1>
+            <div class="timeline">
+
+                <div class="container">
+                    <div class="content">
+                        國立六角師範大學 視覺設計學系 學士學位 | 2016－2020
+                    </div>
+                </div>
+                <div class="container ">
+                    <div class="content">
+                        國立六腳高級中學 美術班 | 2013－2016
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <h2>技能<span>SKILLS</span></h2>
+            <ul class="skillList">
+                <li class="skillListItem">Aodbe Photoshop</li>
+                <li class="skillListItem">Adobe Illustrator</li>
+                <li class="skillListItem">Adobe XD</li>
+                <li class="skillListItem">Adobe Indesign</li>
+                <li class="skillListItem">C4D</li>
+                <li class="skillListItem">Adobe Premiere</li>
+                <li class="skillListItem">語言:中文、英文</li>
+            </ul>
+        </div>
+
+        <div class="work">
+            <h1> 工作經驗 <span>WORK EXPERIENCE</span></h1>
+            <ul>
+                <li>六角學院 視覺設計實習生 | 2019/07－2020/06</li>
+                <img src="imgs/logo.png" alt="六角學員logo">
+                <p>在六角學院長達一年的實習中，前期藉由公司課程掌握 HTML, CSS, Adobe XD，設計給學員使用的名片設計教材，並參與六角週年活動，設計各式周邊商品及活動網路宣傳圖。後期進入 UI
+                    設計範疇，設計六角共筆部落格 - W3HexSchool、六角發案服務網介面設計、供給學員的教 案- RWD官方網站設計，並設計各式網頁活動宣傳圖。</p>
+
+                <li>獨立接案 Hao Jun 酒標設計 | 2019</li>
+                <li>獨立接案 Exulans 酒標設計 | 2019</li>
+                <li>獨立接案 桃園平鎮市民健走活動提案 | 2019</li>
+                <li>Simtree 興趣咖啡 工讀生 | 2018－2019</li>
+                <img src="imgs/tree.png" alt="" class="tree">
+                <p>擔任外場及吧台服務生，學習咖啡相關知識。</p>
+
+            </ul>
+        </div>
+
+
+
+
+        <div class="footer">
+            <h2>聯絡方式<span>CONTACT METHOD</span></h2>
+            <ul>
+                <li>Mail：xxxd@hexschool.com</li>
+                <li>Phone：0910123456</li>
+                <li>Kaohsiung, Taiwan</li>
+                <li>作品連結：<a href="">https://www.behance.net/xxxdddddd</a></li>
+
+            </ul>
+            <div class="icon">
+                <a href=""><img src="imgs/fb.png" alt="fb"></a>
+                <a href=""><img src="imgs/ig.png" alt="ig"></a>
+                <a href=""><img src="imgs/line.png" alt="line"></a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

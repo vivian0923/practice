@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>Document</title>
+</head>
+<style>
+
+    .skill{
+        width:1200px;
+        height:494px;
+        margin:0 auto;
+        background-color: #415165;
+        text-align: center;
+        position: relative;
+    }
+    .skill h2{
+        padding-top:20px;
+        padding-bottom:10px;
+        color: white;
+        font-size: 32px;
+        border-bottom: 1px solid white;
+        width: 996px;
+        margin: 0 auto;
+    }
+
+    .skill span{
+        font-size: 24px;
+        margin-left:16px ;
+    }
+
+    .skill ul{
+        width:216px;
+        height:322px;
+        color:white;
+        border-left: white 1px solid;
+        /* margin: 0 auto; */
+        margin:40px auto 0 auto;
+        padding-left: 20px;
+        /* 讓ul左側向內推20px,所有li會向右偏20px */
+
+       
+    }
+    .skill li{
+        
+        font-size: 24px;
+        margin:6px;
+        float:left;
+        /* 設定所有li向左切齊 */
+        line-height: 36px;
+        /* 設計圖上規定 line-height */
+        
+    }
+    
+    /* 設定底下的區塊 (用偽元素) */
+    .skill ::after{
+        content:"";
+        width:1920px;
+        height:360px;
+        background-color: #96A9C4;
+        z-index: -1;
+        position:absolute;
+        top:70px;
+        right:-360px;
+    }
+</style>
+<body>
+    
+    <div class="skill">
+        <h2>技能 <span>SKILLS</span></h2>
+        <ul>
+            <li>Adobe Photoshop</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe XD</li>
+            <li>Adobe Indesign</li>
+            <li>C4D</li>
+            <li>語言：中文、英文</li>
+        </ul>
+    </div>
+</body>
+</html>
