@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+<style>
+    .container {
+        margin: 0 auto;
+        width: 1200px;
+    }
+
+    h2 {
+        font-size: 48px;
+        line-height: 72px;
+    }
+
+
+    .header {
+        background-color: #AA0601;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header img {
+        margin: 20px 0 20px 80px;
+        border: 2px white solid;
+    }
+
+    .header ul {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 30px;
+    }
+
+    .header li {
+        margin: 20px;
+        font-size: 16px;
+        color: white;
+        margin:20px 32px;
+    }
+    
+    /* 大圖 */
+    .banner {
+        background-image: url(imgs/week3/68.png);
+        background-size: cover;
+        background-position: center center;
+       
+        height:840px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    }
+
+    .banner .text {  
+       
+        width:576px;
+        /* margin: 350px 360px 350px 984px; */
+        /* margin: 350px auto; */
+        color: #650300;
+        font-weight: 600;
+        border:2px white solid;
+        text-align: end;
+        margin-left:650px;
+       
+     
+    }
+
+    .banner .text h1 {
+        font-size: 64px;
+        line-height: 96px;
+         
+    }
+
+    .banner .text span {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            max-width: 767px;
+        }
+        .banner .text { 
+            margin-left:120px;
+        }
+        
+        .banner .text span {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .banner .text h1 {
+        font-size: 48px;
+        line-height: 72px;
+        }
+         
+    }
+
+    @media (max-width: 375px) {
+        .header {
+            width:100%;
+            display: none;
+        }
+
+        .header ul {
+            display: none;
+        }
+
+        .header img {
+           text-align:center;
+           
+            /* border:red 2px solid; */
+        }
+
+        
+    }
+</style>
+
+<body>
+    <div class="header">
+        <a href="#"><img src="imgs/week3/logo-new_工作區域 1.png" alt="logo圖"></a>
+        <ul>
+            <li>系列鏡框</li>
+            <li>門市據點</li>
+            <li>部落格</li>
+            <li>常見問題</li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class="text">
+            <h1><span>Promise-Desert 2020 早春系列</span><br>
+                看得清，才能看得遠</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
