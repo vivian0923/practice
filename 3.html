@@ -14,11 +14,13 @@
 
     }
 
-    .container {
+    .wrap {
         margin: 0 auto;
-        width: 1200px;
+        max-width: 1200px;
         border: 2px solid purple;
     }
+
+
 
     .h2 {
         font-size: 48px;
@@ -160,6 +162,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+        align-items: center;
     }
 
     /* .classic .sunglasses{
@@ -172,33 +175,49 @@
 
     .classic li .bigpic {
         margin: 0 24px;
+        width: 50%;
+    }
+
+    .classic li span {
+        font-size: 48px;
+        color: #AA0601;
     }
 
     .classic li p {
-        line-height: 320px;
+        width: 50%;
+        /* 一定要設寬度不然flex裡面元素只會被內容撐開小icon會和字重疊 */
+        /* line-height: 320px;  */
+        /* 拿掉否則小icon會和字沒辦法併排 */
         text-transform: uppercase;
         /* 大寫 */
         font-weight: 700;
         display: flex;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        /* align-items: center; */
+        justify-content: center;
         background-repeat: no-repeat;
-         border: blue 2px solid;
+        background-position: left center;
+        /* 設定小icon在籃框的的位置 */
+        border: blue 2px solid;
     }
-    .classic li .opticalIcon{
+
+    .classic li .opticalIcon {
+        background-size: 48px;
         background-image: url(./imgs/week3/iconfinde.png);
     }
-    .classic li .sunglassesIcon{
+
+    .classic li .sunglassesIcon {
+        background-size: 48px;
         background-image: url(./imgs/week3/Layer.png);
     }
-    .classic li .functionalIcon{
+
+    .classic li .functionalIcon {
+        background-size: 48px;
         background-image: url(./imgs/week3/Page-1.png);
     }
 
-    .classic li p > img {
-        /* border: blue 2px solid; */
-    }
+    /* .classic li p>img {
+        border: blue 2px solid;
+    } */
 
     @media screen and (max-width: 768px) {
         .container {
@@ -243,7 +262,7 @@
             line-height: 30px;
         }
 
-        /* 經典鏡框 */
+        /* 經典鏡框 平板 */
         .classic h2 {
             font-size: 32px;
             margin: 16px 0;
@@ -263,16 +282,29 @@
             width: 50%;
         }
 
-        .classic li p {
-            line-height: 168px;
-            font-size: 24px;
-            /* font-weight: 700; */
+        .classic li span {
+            font-size: 28px;
         }
 
-        .classic li p>img {
-            width: 32px;
-            height: 25.16px;
+        .classic li p {
+            width: 50%;
+
         }
+
+        .classic li .opticalIcon {
+            background-size: 32px;
+        }
+
+        .classic li .sunglassesIcon {
+            background-size: 32px;
+
+        }
+
+        .classic li .functionalIcon {
+            background-size: 32px;
+
+        }
+
 
     }
 
@@ -336,108 +368,128 @@
             margin: 16px 0;
         }
 
+
+
         .classic li .bigpic {
             width: 100%;
             text-align: center;
             margin: 0;
             /* margin覆寫桌機的讓圖片置中 */
-            position: relative;
+
         }
 
         .classic li p {
             /* display: none; */
             position: absolute;
-            left: 160px;
+            left: 100px;
+            width:60%;
+
+        }
+
+        .classic li span {
             color: white;
         }
-        .classic li p > img{
-            display: none;
+
+        .classic li .opticalIcon {
+            background-size: 23px;
+            background-image: url(./imgs/week3/componentwhite.png);
         }
-        .classic li p>img :after {
-            background-image: url(./imgs/week3/componentwhite.png) !important;
+
+        .classic li .sunglassesIcon {
+            background-size: 23px;
+            background-image: url(./imgs/week3/whitesunglasses.png);
         }
+
+        .classic li .functionalIcon {
+            background-size: 23px;
+            background-image: url(./imgs/week3/whitefunctional.png);
+        }
+
+
+
 
     }
 </style>
 
 <body>
-    <div class="header">
-        <a href="#"><img src="imgs/week3/logo-new_工作區域 1.png" alt="logo圖"></a>
-        <nav>
-            <ul>
-                <li>系列鏡框</li>
-                <li>門市據點</li>
-                <li>部落格</li>
-                <li>常見問題</li>
-            </ul>
-        </nav>
-    </div>
+    <div class="wrpa">
+        <div class="header">
+            <a href="#"><img src="imgs/week3/logo-new_工作區域 1.png" alt="logo圖"></a>
+            <nav>
+                <ul>
+                    <li>系列鏡框</li>
+                    <li>門市據點</li>
+                    <li>部落格</li>
+                    <li>常見問題</li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="banner">
-        <div class="text">
-            <h1><span>Promise-Desert 2020 早春系列</span><br>
-                看得清，才能看得遠</h1>
+        <div class="banner">
+            <div class="text">
+                <h1><span>Promise-Desert 2020 早春系列</span><br>
+                    看得清，才能看得遠</h1>
+            </div>
+        </div>
+
+        <div class="feature">
+            <h2>用專業的心，做專業的事</h2>
+            <ul>
+                <li>
+                    <img src="./imgs/week3/money.svg" alt="錢icon">
+                    <h3>單一價格</h3>
+                    <p>無論任何度數皆不需追加費用 即可擁有適合自己的薄型球面 鏡片。</p>
+                </li>
+
+                <li>
+                    <img src="./imgs/week3/time.svg" alt="錢icon">
+                    <h3>20 分鐘即可取件</h3>
+                    <p>為了您的寶貴時間著想，以豐 富專業知識與技術將結帳到交 件的時間縮減至最快 20 分鐘 即可完成。</p>
+                </li>
+
+                <li>
+                    <img src="./imgs/week3/heart.svg" alt="錢icon">
+                    <h3>安心售後服務</h3>
+                    <p>我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。</p>
+                </li>
+
+                <li>
+                    <img src="./imgs/week3/glasses.svg" alt="錢icon">
+                    <h3>關於鏡片</h3>
+                    <p>使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="classic h2">
+            <h2>經典系列鏡框</h2>
+            <ul>
+                <li>
+                    <img src="./imgs/week3/8.png" alt="經典系列第一張圖" class="bigpic">
+                    <p class=" opticalIcon">
+                        <!-- <img src="./imgs/week3/iconfinder.png" alt="鑽石"> -->
+                        <span>optical</span>
+                    </p>
+                </li>
+
+                <li class="sunglasses ">
+                    <img src="./imgs/week3/pic.png" alt="經典系列第二張圖" class="bigpic">
+                    <p class=" sunglassesIcon">
+                        <!-- <img src="./imgs/week3/Layer.png" alt="太陽小icon"> -->
+                        <span>sunglasses</span>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./imgs/week3/28.png" alt="經典系列第二張圖" class="bigpic">
+                    <p class=" functionalIcon">
+                        <!-- <img src="./imgs/week3/Page-1.png" alt="太陽小icon">  -->
+                        <span>functional</span>
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
-
-    <div class="feature">
-        <h2>用專業的心，做專業的事</h2>
-        <ul>
-            <li>
-                <img src="./imgs/week3/money.svg" alt="錢icon">
-                <h3>單一價格</h3>
-                <p>無論任何度數皆不需追加費用 即可擁有適合自己的薄型球面 鏡片。</p>
-            </li>
-
-            <li>
-                <img src="./imgs/week3/time.svg" alt="錢icon">
-                <h3>20 分鐘即可取件</h3>
-                <p>為了您的寶貴時間著想，以豐 富專業知識與技術將結帳到交 件的時間縮減至最快 20 分鐘 即可完成。</p>
-            </li>
-
-            <li>
-                <img src="./imgs/week3/heart.svg" alt="錢icon">
-                <h3>安心售後服務</h3>
-                <p>我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。</p>
-            </li>
-
-            <li>
-                <img src="./imgs/week3/glasses.svg" alt="錢icon">
-                <h3>關於鏡片</h3>
-                <p>使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。</p>
-            </li>
-        </ul>
-    </div>
-
-    <div class="classic h2">
-        <h2>經典系列鏡框</h2>
-        <ul>
-            <li>
-                <img src="./imgs/week3/8.png" alt="經典系列第一張圖" class="bigpic">
-                <p class=" opticalIcon">
-                    <!-- <img src="./imgs/week3/iconfinder.png" alt="鑽石"> -->
-                    <span>optical</span>
-                </p>
-            </li>
-
-            <li class="sunglasses ">
-                <img src="./imgs/week3/pic.png" alt="經典系列第二張圖" class="bigpic">
-                <p class=" sunglassesIcon"> 
-                    <!-- <img src="./imgs/week3/Layer.png" alt="太陽小icon"> -->
-                    <span>sunglasses</span>
-                </p>
-            </li>
-
-            <li>
-                <img src="./imgs/week3/28.png" alt="經典系列第二張圖" class="bigpic">
-                <p class=" functionalIcon"> 
-                    <!-- <img src="./imgs/week3/Page-1.png" alt="太陽小icon">  -->
-                    <span>functional</span>
-                </p>
-            </li>
-        </ul>
-    </div>
-
 
 </body>
 
