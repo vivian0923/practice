@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* product */
+        .product-list li {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .product-list img,
+        .p-img {
+            width: 50%;
+        }
+
+        .product-list li:nth-child(2) {
+            justify-content: space-between;
+        }
+
+        .product-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-list h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            font-style: italic;
+            font-weight: bolder;
+            margin-left: 1.5rem;
+        }
+
+        .product-list li:nth-child(2) h2 {
+            margin-right: 1.5rem;
+        }
+
+        .product-list li:nth-child(2) img {
+            width: 100%;
+        }
+
+        .p-img {
+            position: relative;
+        }
+
+        .p-img::before {
+            content: '';
+            background: url("./img/product-2-color.png") no-repeat;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background-size: contain;
+        }
+
+        .p-img:hover::before {
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .product-list li {
+                margin-bottom: 0.5rem;
+            }
+
+            .product-list h2 {
+                font-size: 1.25rem;
+                justify-content: center;
+            }
+
+            .product-list li:nth-child(2) {
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+            }
+
+            .product-list li:nth-child(2) h2 {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 414px) {
+            .product-list li {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .product-list h2 {
+                color: white;
+                position: absolute;
+                margin-left: 0;
+                z-index: 1;
+            }
+
+            .product-list h2 img {
+                filter: brightness(500);
+            }
+
+            .product-list img,
+            .p-img {
+                width: 100%;
+            }
+
+            .product-list li:nth-child(2) {
+                justify-content: center;
+            }
+
+            .product-list li:nth-child(2) h3 {
+                z-index: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 經典系列鏡框 -->
+    <section class="product pb-10">
+        <div class="container">
+            <h2 class="title">經典系列鏡框</h2>
+            <ul class="product-list">
+                <li>
+                    <img src="./img/product-1.png" alt="">
+                    <h2 class="text-secondary">
+                        <img src="./img/icon-diamond.svg" alt="">
+                        optical
+                    </h2>
+                </li>
+                <li>
+                    <h2 class="text-secondary">
+                        <img src="./img/icon-sun.svg" alt="">
+                        sunglasses
+                    </h2>
+                    <div class="p-img">
+                        <img src="./img/product-2.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/product-3.png" alt="">
+                    <h2 class="text-secondary">
+                        <img src="./img/icon-thunder.svg" alt="">
+                        functional
+                    </h2>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
